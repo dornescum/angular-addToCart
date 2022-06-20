@@ -1,5 +1,11 @@
 # AddToCart
+# HttpFetch
+tutorial:
+'https://www.youtube.com/watch?v=855KrFfF9-w&t=3200s'
 
+## concepts : **Pipe, Services**
+>  fetch data and filter 
+<br/>
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
 
 ## Development server
