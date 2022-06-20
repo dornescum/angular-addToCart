@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CartService} from "src/app/service/cart.service";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  selector: 'app-header', templateUrl: './header.component.html', styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  totalItem: number = 0;
+  public searchTerm : string = '';
+  constructor(private cartService: CartService) {
+  }
 
   ngOnInit(): void {
+    this.cartService.getProducts().subscribe((res) => {
+      // console.log(res)
+      this.totalItem = res.length
+    })
+  }
+  // fixme error search
+  search(event:any){
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+    this.cartService.search.next(this.searchTerm);
   }
 
 }

@@ -31,7 +31,6 @@ h6 {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: none;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
